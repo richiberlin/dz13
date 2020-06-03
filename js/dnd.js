@@ -1,7 +1,7 @@
 export class DnD {
   constructor(elem, methodSetCoords) {
     this.elem = elem;
-    this.methodSetCoords = methodSetCoords || null; // если метод не передали, то он будет равен null
+    this.methodSetCoords = methodSetCoords || null;
 
     this._handleMouseDown = this._mouseDown.bind(this);
     this._handleMouseUp = this._mouseUp.bind(this);
@@ -13,11 +13,11 @@ export class DnD {
   _init() {
     this._setPositionAbsolute();
 
-    this.elem.addEventListener("mousedown", this._handleMouseDown);
+    this.elem.addEventListener('mousedown', this._handleMouseDown);
   }
 
   _setPositionAbsolute() {
-    this.elem.style.position = "absolute";
+    this.elem.style.position = 'absolute';
   }
 
   _mouseDown(event) {
@@ -27,13 +27,13 @@ export class DnD {
     this.shiftY = event.clientY - elemRect.top;
     this._trackMouse(event.pageX, event.pageY);
 
-    document.addEventListener("mousemove", this._handleMouseMove);
-    document.addEventListener("mouseup", this._handleMouseUp);
+    document.addEventListener('mousemove', this._handleMouseMove);
+    document.addEventListener('mouseup', this._handleMouseUp);
   }
 
   _mouseUp() {
-    document.removeEventListener("mousemove", this._handleMouseMove);
-    document.removeEventListener("mouseup", this._handleMouseUp);
+    document.removeEventListener('mousemove', this._handleMouseMove);
+    document.removeEventListener('mouseup', this._handleMouseUp);
 
     // если метод передали в класс, то вызываем его при отжатии клавиши
     if (this.methodSetCoords != null) {
@@ -50,7 +50,7 @@ export class DnD {
     this.left = pageX - this.shiftX;
     this.top = pageY - this.shiftY;
 
-    this.elem.style.left = this.left + "px";
-    this.elem.style.top = this.top + "px";
+    this.elem.style.left = `${this.left}px`;
+    this.elem.style.top = `${this.top}px`;
   }
 }
