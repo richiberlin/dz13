@@ -1,0 +1,25 @@
+{
+  "name": "dz13",
+  "version": "1.0.0",
+  "description": "notes",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richiberlin/dz13.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richiberlin/dz13/issues"
+  },
+  "homepage": "https://github.com/richiberlin/dz13#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {}
+}
